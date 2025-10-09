@@ -12,11 +12,18 @@ Lastly, log into HuggingFace using the [HuggingFace CLI](https://huggingface.co/
 ```sh
 huggingface-cli login
 ```
+
 ## DecodingTrust
 To download DecodingTrust, you must first fill [this form](https://huggingface.co/datasets/AI-Secure/DecodingTrust).
 
 ## HEx-PHI
 To download HEx-PHI, you must first fill [this form](https://huggingface.co/datasets/LLM-Tuning-Safety/HEx-PHI).
+
+## HarmEval
+To download DecodingTrust, you must first fill [this form](https://huggingface.co/datasets/SoftMINER-Group/HarmEval).
+
+## TechHazardQA
+To download TechHazardQA, you must first fill [this form](https://huggingface.co/datasets/SoftMINER-Group/TechHazardQA).
 
 ## ToxiGen
 To download ToxiGen, you must first fill [this form](https://forms.office.com/pages/responsepage.aspx?id=utmvZM8Oz0q8NpNfYjW6i0NV-wEU-P5EvmfM4BAGgCJUNThXTDdMT1hXSjhOQ1pGRUtXVEJMSTVVRy4u).

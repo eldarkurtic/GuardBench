@@ -4,42 +4,46 @@
 > UnsafeQA, PromptsDE, PromptsFR, PromptsIT, and PromptsES will be released soon!
 
 | Dataset                                                 | Category      | Sub-category | Total | Unsafe | Alias                      |
-| :------------------------------------------------------ | :------------ | :----------- | ----: | -----: | :------------------------- |
-| [AdvBench Behaviors](#advbench-behaviors)               | Prompts       | Instructions |   520 |   100% | advbench_behaviors         |
-| [HarmBench Behaviors](#harmbench-behaviors)             | Prompts       | Instructions |   320 |   100% | harmbench_behaviors        |
-| [I-CoNa](#i-cona)                                       | Prompts       | Instructions |   178 |   100% | i_cona                     |
-| [I-Controversial](#i-controversial)                     | Prompts       | Instructions |    40 |   100% | i_controversial            |
-| [I-MaliciousInstructions](#i-maliciousinstructions)     | Prompts       | Instructions |   100 |   100% | i_malicious_instructions   |
-| [I-Physical-Safety](#i-physical-safety)                 | Prompts       | Instructions |   200 |    50% | i_physical_safety          |
-| [MaliciousInstruct](#maliciousinstruct)                 | Prompts       | Instructions |   100 |   100% | malicious_instruct         |
-| [MITRE](#mitre)                                         | Prompts       | Instructions |   977 |   100% | mitre                      |
-| [StrongREJECT Instructions](#strongreject-instructions) | Prompts       | Instructions |   213 |   100% | strong_reject_instructions |
-| [TDCRedTeaming](#tdcredteaming)                         | Prompts       | Instructions |    50 |   100% | tdc_red_teaming            |
-| [CatQA](#catqa)                                         | Prompts       | Questions    |   550 |   100% | cat_qa                     |
-| [Do Anything Now Questions](#do-anything-now-questions) | Prompts       | Questions    |   390 |   100% | do_anything_now_questions  |
-| [DoNotAnswer](#donotanswer)                             | Prompts       | Questions    |   939 |   100% | do_not_answer              |
-| [HarmfulQ](#harmfulq)                                   | Prompts       | Questions    |   200 |   100% | harmful_q                  |
-| [HarmfulQA Questions](#harmfulqa-questions)             | Prompts       | Questions    |  1960 |   100% | harmful_qa_questions       |
-| [HEx-PHI](#hex-phi)                                     | Prompts       | Questions    |   330 |   100% | hex_phi                    |
-| [XSTest](#xstest)                                       | Prompts       | Questions    |   450 |    44% | xstest                     |
-| [AdvBench Strings](#advbench-strings)                   | Prompts       | Statements   |   574 |   100% | advbench_strings           |
-| [DecodingTrust Stereotypes](#decodingtrust-stereotypes) | Prompts       | Statements   |  1152 |   100% | decoding_trust_stereotypes |
-| [DynaHate](#dynahate)                                   | Prompts       | Statements   |  4120 |    55% | dynahate                   |
-| [HateCheck](#hatecheck)                                 | Prompts       | Statements   |  3728 |    69% | hatecheck                  |
-| [Hatemoji Check](#hatemoji-check)                       | Prompts       | Statements   |  3683 |    71% | hatemoji_check             |
-| [SafeText](#safetext)                                   | Prompts       | Statements   |  1465 |    25% | safe_text                  |
-| [ToxiGen](#toxigen)                                     | Prompts       | Statements   |   940 |    43% | toxigen                    |
-| [AART](#aart)                                           | Prompts       | Mixed        |  3269 |   100% | aart                       |
-| [OpenAI Moderation Dataset](#openai-moderation-dataset) | Prompts       | Mixed        |  1680 |    31% | openai_moderation_dataset  |
-| [SimpleSafetyTests](#simplesafetytests)                 | Prompts       | Mixed        |   100 |   100% | simple_safety_tests        |
-| [Toxic Chat](#toxic-chat)                               | Prompts       | Mixed        |  5083 |     7% | toxic_chat                 |
-| [BeaverTails 330k](#beavertails-330k)                   | Conversations | Single-Turn  | 11088 |    55% | beaver_tails_330k          |
-| [Bot-Adversarial Dialogue](#bot-adversarial-dialogue)   | Conversations | Multi-Turn   |  2598 |    36% | bot_adversarial_dialogue   |
-| [ConvAbuse](#convabuse)                                 | Conversations | Multi-Turn   |   853 |    15% | convabuse                  |
-| [DICES 350](#dices-350)                                 | Conversations | Multi-Turn   |   350 |    23% | dices_350                  |
-| [DICES 990](#dices-990)                                 | Conversations | Multi-Turn   |   990 |    16% | dices_990                  |
-| [HarmfulQA](#harmfulqa)                                 | Conversations | Multi-Turn   | 16459 |    45% | harmful_qa                 |
-| [ProsocialDialog](#prosocialdialog)                     | Conversations | Multi-Turn   | 25029 |    60% | prosocial_dialog           |
+| :------------------------------------------------------ | :------------ | :----------- | ----: | :----- | :------------------------- |
+| [AdvBench Behaviors](#advbench-behaviors)               | Prompts       | Instructions |   520 | 100%   | advbench_behaviors         |
+| [HarmBench Behaviors](#harmbench-behaviors)             | Prompts       | Instructions |   320 | 100%   | harmbench_behaviors        |
+| [I-CoNa](#i-cona)                                       | Prompts       | Instructions |   178 | 100%   | i_cona                     |
+| [I-Controversial](#i-controversial)                     | Prompts       | Instructions |    40 | 100%   | i_controversial            |
+| [I-MaliciousInstructions](#i-maliciousinstructions)     | Prompts       | Instructions |   100 | 100%   | i_malicious_instructions   |
+| [I-Physical-Safety](#i-physical-safety)                 | Prompts       | Instructions |   200 | 50%    | i_physical_safety          |
+| [JBB Behaviors](#jbb-behaviors)                         | Prompts       | Instructions |   200 | 50%    | jbb_behaviors              |
+| [MaliciousInstruct](#maliciousinstruct)                 | Prompts       | Instructions |   100 | 100%   | malicious_instruct         |
+| [MITRE](#mitre)                                         | Prompts       | Instructions |   977 | 100%   | mitre                      |
+| [StrongREJECT Instructions](#strongreject-instructions) | Prompts       | Instructions |   213 | 100%   | strong_reject_instructions |
+| [TDCRedTeaming](#tdcredteaming)                         | Prompts       | Instructions |    50 | 100%   | tdc_red_teaming            |
+| [CatQA](#catqa)                                         | Prompts       | Questions    |   550 | 100%   | cat_qa                     |
+| [Do Anything Now Questions](#do-anything-now-questions) | Prompts       | Questions    |   390 | 100%   | do_anything_now_questions  |
+| [DoNotAnswer](#donotanswer)                             | Prompts       | Questions    |   939 | 100%   | do_not_answer              |
+| [HarmEval](#harmeval)                                   | Prompts       | Questions    |   550 | 100%   | harm_eval                  |
+| [HarmfulQ](#harmfulq)                                   | Prompts       | Questions    |   200 | 100%   | harmful_q                  |
+| [HarmfulQA Questions](#harmfulqa-questions)             | Prompts       | Questions    |  1960 | 100%   | harmful_qa_questions       |
+| [HEx-PHI](#hex-phi)                                     | Prompts       | Questions    |   300 | 100%   | hex_phi                    |
+| [NicheHazardQA](#nichehazardqa)                         | Prompts       | Questions    |   388 | 100%   | niche_hazard_qa            |
+| [TechHazardQA](#techhazardqa)                           | Prompts       | Questions    |  7745 | 100%   | tech_hazard_qa             |
+| [XSTest](#xstest)                                       | Prompts       | Questions    |   450 | 44%    | xstest                     |
+| [AdvBench Strings](#advbench-strings)                   | Prompts       | Statements   |   574 | 100%   | advbench_strings           |
+| [DecodingTrust Stereotypes](#decodingtrust-stereotypes) | Prompts       | Statements   |  1152 | 100%   | decoding_trust_stereotypes |
+| [DynaHate](#dynahate)                                   | Prompts       | Statements   |  4120 | 55%    | dynahate                   |
+| [HateCheck](#hatecheck)                                 | Prompts       | Statements   |  3728 | 69%    | hatecheck                  |
+| [Hatemoji Check](#hatemoji-check)                       | Prompts       | Statements   |  3683 | 71%    | hatemoji_check             |
+| [SafeText](#safetext)                                   | Prompts       | Statements   |  1465 | 25%    | safe_text                  |
+| [ToxiGen](#toxigen)                                     | Prompts       | Statements   |   940 | 43%    | toxigen                    |
+| [AART](#aart)                                           | Prompts       | Mixed        |  3269 | 100%   | aart                       |
+| [OpenAI Moderation Dataset](#openai-moderation-dataset) | Prompts       | Mixed        |  1680 | 31%    | openai_moderation_dataset  |
+| [SimpleSafetyTests](#simplesafetytests)                 | Prompts       | Mixed        |   100 | 100%   | simple_safety_tests        |
+| [Toxic Chat](#toxic-chat)                               | Prompts       | Mixed        |  5083 | 7%     | toxic_chat                 |
+| [BeaverTails 330k](#beavertails-330k)                   | Conversations | Single-Turn  | 11088 | 55%    | beaver_tails_330k          |
+| [Bot-Adversarial Dialogue](#bot-adversarial-dialogue)   | Conversations | Multi-Turn   |  2598 | 36%    | bot_adversarial_dialogue   |
+| [ConvAbuse](#convabuse)                                 | Conversations | Multi-Turn   |   853 | 15%    | convabuse                  |
+| [DICES 350](#dices-350)                                 | Conversations | Multi-Turn   |   350 | 23%    | dices_350                  |
+| [DICES 990](#dices-990)                                 | Conversations | Multi-Turn   |   990 | 16%    | dices_990                  |
+| [HarmfulQA](#harmfulqa)                                 | Conversations | Multi-Turn   | 16459 | 45%    | harmful_qa                 |
+| [ProsocialDialog](#prosocialdialog)                     | Conversations | Multi-Turn   | 25029 | 60%    | prosocial_dialog           |
 
 ## AdvBench Behaviors
 
@@ -241,6 +245,42 @@
   ```
 </details>
 
+## JBB Behaviors
+
+- Language(s): English
+- Source(s): 
+- License: `MIT`
+- Alias: `jbb_behaviors`
+
+<details>
+  <summary>BibTeX</summary>
+
+  ```bibtex
+  jbb_behaviors,
+    author       = {Patrick Chao and
+                    Edoardo Debenedetti and
+                    Alexander Robey and
+                    Maksym Andriushchenko and
+                    Francesco Croce and
+                    Vikash Sehwag and
+                    Edgar Dobriban and
+                    Nicolas Flammarion and
+                    George J. Pappas and
+                    Florian Tram{\`{e}}r and
+                    Hamed Hassani and
+                    Eric Wong},
+    title        = {JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large
+                    Language Models},
+    booktitle    = {Advances in Neural Information Processing Systems 38: Annual Conference
+                    on Neural Information Processing Systems 2024, NeurIPS 2024, Vancouver,
+                    BC, Canada, December 10 - 15, 2024},
+    year         = {2024},
+    url          = {http://papers.nips.cc/paper\_files/paper/2024/hash/63092d79154adebd7305dfd498cbff70-Abstract-Datasets\_and\_Benchmarks\_Track.html},
+    timestamp    = {Thu, 13 Feb 2025 16:56:43 +0100},
+  }
+  ```
+</details>
+
 ## MaliciousInstruct
 
 - Language(s): English
@@ -313,7 +353,7 @@
 
 - Language(s): English
 - Source(s): Human-generated
-- License: `N/A`
+- License: `MIT`
 - Alias: `strong_reject_instructions`
 
 <details>
@@ -471,6 +511,38 @@
   ```
 </details>
 
+## HarmEval
+
+- Language(s): English
+- Source(s): Human-generated
+- License: `Apache 2.0`
+- Alias: `harm_eval`
+
+<details>
+  <summary>BibTeX</summary>
+
+  ```bibtex
+  @inproceedings{harm_eval,
+    author       = {Somnath Banerjee and
+                    Sayan Layek and
+                    Soham Tripathy and
+                    Shanu Kumar and
+                    Animesh Mukherjee and
+                    Rima Hazra},
+    title        = {SafeInfer: Context Adaptive Decoding Time Safety Alignment for Large
+                    Language Models},
+    booktitle    = {AAAI-25, Sponsored by the Association for the Advancement of Artificial
+                    Intelligence, February 25 - March 4, 2025, Philadelphia, PA, {USA}},
+    pages        = {27188--27196},
+    publisher    = {{AAAI} Press},
+    year         = {2025},
+    url          = {https://doi.org/10.1609/aaai.v39i26.34927},
+    doi          = {10.1609/AAAI.V39I26.34927},
+    timestamp    = {Thu, 17 Apr 2025 17:08:58 +0200},
+  }
+  ```
+</details>
+
 ## HarmfulQ
 
 - Language(s): English
@@ -559,6 +631,66 @@
     eprinttype    = {arXiv},
     eprint       = {2310.03693},
     timestamp    = {Wed, 20 Mar 2024 11:34:12 +0100},
+  }
+  ```
+</details>
+
+## NicheHazardQA
+
+- Language(s): English
+- Source(s): Machine-generated
+- License: `Apache 2.0`
+- Alias: `niche_hazard_qa`
+
+<details>
+  <summary>BibTeX</summary>
+
+  ```bibtex
+  @inproceedings{niche_hazard_qa,
+    author       = {Rima Hazra and
+                    Sayan Layek and
+                    Somnath Banerjee and
+                    Soujanya Poria},
+    title        = {Sowing the Wind, Reaping the Whirlwind: The Impact of Editing Language
+                    Models},
+    booktitle    = {Findings of the Association for Computational Linguistics, {ACL} 2024,
+                    Bangkok, Thailand and virtual meeting, August 11-16, 2024},
+    pages        = {16227--16239},
+    publisher    = {Association for Computational Linguistics},
+    year         = {2024},
+    url          = {https://doi.org/10.18653/v1/2024.findings-acl.960},
+    doi          = {10.18653/V1/2024.FINDINGS-ACL.960},
+    timestamp    = {Wed, 09 Oct 2024 07:38:21 +0200},
+  }
+  ```
+</details>
+
+## TechHazardQA
+
+- Language(s): English
+- Source(s): Machine-generated
+- License: `Apache 2.0`
+- Alias: `tech_hazard_qa`
+
+<details>
+  <summary>BibTeX</summary>
+
+  ```bibtex
+  @inproceedings{tech_hazard_qa,
+    author       = {Somnath Banerjee and
+                    Sayan Layek and
+                    Rima Hazra and
+                    Animesh Mukherjee},
+    title        = {How (Un)ethical Are Instruction-Centric Responses of LLMs? Unveiling
+                    the Vulnerabilities of Safety Guardrails to Harmful Queries},
+    booktitle    = {Proceedings of the Nineteenth International {AAAI} Conference on Web
+                    and Social Media, June 23-26, 2025, Copenhagen, Denmark},
+    pages        = {193--205},
+    publisher    = {{AAAI} Press},
+    year         = {2025},
+    url          = {https://doi.org/10.1609/icwsm.v19i1.35811},
+    doi          = {10.1609/ICWSM.V19I1.35811},
+    timestamp    = {Tue, 10 Jun 2025 16:54:35 +0200},
   }
   ```
 </details>
