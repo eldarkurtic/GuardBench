@@ -20,6 +20,7 @@ DATASETS = {
     "do_anything_now_questions": "Do Anything Now Questions",
     "do_not_answer": "DoNotAnswer",
     "dynahate": "DynaHate",
+    "harm_eval": "HarmEval",
     "harmbench_behaviors": "HarmBench Behaviors",
     "harmful_q": "HarmfulQ",
     "harmful_qa_questions": "HarmfulQA Questions",
@@ -31,14 +32,17 @@ DATASETS = {
     "i_controversial": "I-Controversial",
     "i_malicious_instructions": "I-MaliciousInstructions",
     "i_physical_safety": "I-Physical-Safety",
+    "jbb_behaviors": "JBB Behaviors",
     "malicious_instruct": "MaliciousInstruct",
     "mitre": "MITRE",
+    "niche_hazard_qa": "NicheHazardQA",
     "openai_moderation_dataset": "OpenAI Moderation Dataset",
     "prosocial_dialog": "ProsocialDialog",
     "safe_text": "SafeText",
     "simple_safety_tests": "SimpleSafetyTests",
     "strong_reject_instructions": "StrongREJECT Instructions",
     "tdc_red_teaming": "TDCRedTeaming",
+    "tech_hazard_qa": "TechHazardQA",
     "toxic_chat": "Toxic Chat",
     "toxigen": "ToxiGen",
     "xstest": "XSTest",
@@ -55,6 +59,7 @@ UNSAFE_ONLY_DATASETS = [
     "Do Anything Now",
     "DoNotAnswer",
     "HarmBench Behaviors",
+    "HarmEval",
     "HarmfulQA Questions",
     "HEx-PHI",
     "I-CoNa",
@@ -62,10 +67,12 @@ UNSAFE_ONLY_DATASETS = [
     "I-MaliciousInstructions",
     "MaliciousInstruct",
     "MITRE",
+    "NicheHazardQA",
     "SafetyInstructions",
     "SimpleSafetyTests",
     "StrongREJECT Instructions",
     "TDCRedTeaming",
+    "TechHazardQA",
     "Toxic Chat Jailbreaks",
 ]
 
@@ -112,10 +119,10 @@ def download_dataset(dataset: str):
     Args:
         dataset (str): Dataset to download.
     """
-    return get_dataset(dataset).download_and_format()
+    get_dataset(dataset).download_and_format()
 
 
-def download(datasets: list[str] = "all"):
+def download(datasets: list[str] | str = "all"):
     """Download the specified datasets.
 
     Args:
@@ -123,6 +130,9 @@ def download(datasets: list[str] = "all"):
     """
     if datasets == "all":
         datasets = list(DATASETS)
+
+    if isinstance(datasets, str):
+        datasets = [datasets]
 
     for dataset in datasets:
         download_dataset(dataset)
@@ -179,8 +189,26 @@ def get_datasets_by(
     return datasets
 
 
+def get_prompt_dataset_list(language: str = None) -> list:
+    """Returns the list of prompt datasets.
+
+    Returns:
+        list: List of prompt datasets.
+    """
+    return get_datasets_by("prompts", None, language)
+
+
+def get_single_turn_conversation_dataset_list(language: str = None) -> list:
+    """Returns the list of single-turn conversation datasets.
+
+    Returns:
+        list: List of single-turn conversation datasets.
+    """
+    return get_datasets_by("conversations", "single-turn", language)
+
+
 def get_sorted_dataset_list() -> list:
-    """Returns the list of dataset sorted as in the paper.
+    """Returns the list of datasets sorted as in the paper.
 
     Returns:
         list: List of datasets.
