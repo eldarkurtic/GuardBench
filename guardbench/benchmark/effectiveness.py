@@ -6,9 +6,25 @@ from unified_io import create_path, write_json
 from ..datasets import DATASETS, load_dataset
 from ..evaluate import evaluate
 
+metric_mapping = {
+    "precision": "Precision",
+    "recall": "Recall",
+    "f1": "F1",
+    "mcc": "MCC",
+    "auprc": "AUPRC",
+    "sensitivity": "Sensitivity",
+    "specificity": "Specificity",
+    "g_mean": "G-Mean",
+    "fpr": "FPR",
+    "fnr": "FNR",
+}
 
-def get_results_table(results) -> None:
-    headers = ["Dataset", "F1", "Recall"]
+
+def format_score(score: float) -> str:
+    return "{:.3f}".format(round(score, 3))
+
+
+def get_results_table(headers, results) -> None:
     return tabulate(results, headers=headers, tablefmt="github", disable_numparse=True)
 
 
@@ -25,6 +41,7 @@ def benchmark(
     out_dir: str = "results",
     batch_size: int = 32,
     datasets: list = "all",
+    metrics: list = None,
     **kwargs,
 ) -> None:
     """Benchmark the effectiveness of the provided moderation function/model.     Additional keyword arguments are passed to the provided moderation function. For example, you can pass the tokenizer and the model to the moderation function. Check the official repository for examples and tutorials.
@@ -34,12 +51,25 @@ def benchmark(
         model_name (str, optional): "Name of the moderation model". Defaults to "moderator".
         out_dir (str, optional): Directory for the moderation outputs. Defaults to "results".
         batch_size (int, optional): Batch size. Defaults to 32.
+        metrics (list, optional): Metrics used to evaluate results. If None, defaults to `["f1", "recall"]`. Available metrics are: `precision`, `recall`, `f1`, `mcc`, `auprc`, `sensitivity`, `specificity`, `g_mean`, `fpr`, `fnr`, `tn`, `fp`, `fn`, `tp`.
         datasets (list, optional): Datasets selected for evaluation. Defaults to "all".
     """
 
-    # Set datasets if None  ----------------------------------------------------
+    # Set datasets if "all"  ---------------------------------------------------
     if datasets == "all":
         datasets = list(DATASETS)
+
+    # Set metrics if None  -----------------------------------------------------
+    if isinstance(metrics, str):
+        metrics = [metrics]
+    if metrics is None:
+        metrics = ["f1", "recall"]
+
+    for m in metrics:
+        if m not in metric_mapping:
+            raise ValueError(
+                f"Metric `{m}` is not supported. Supported metrics are: `precision`, `recall`, `f1`, `mcc`, `auprc`, `sensitivity`, `specificity`, `g_mean`, `fpr`, `fnr`, `tn`, `fp`, `fn`, `tp`."
+            )
 
     # Benchmarking Effectiveness -----------------------------------------------
     logger.start("Benchmarking Effectiveness")
@@ -71,15 +101,10 @@ def benchmark(
 
         # Evaluate -------------------------------------------------------------
         report = evaluate(y_true, y_pred_prob)
-        results.append(
-            [
-                dataset.name,
-                "{:.3f}".format(round(report["f1"], 3)),
-                "{:.3f}".format(round(report["recall"], 3)),
-            ]
-        )
+        results.append([dataset.name] + [format_score(report[m]) for m in metrics])
 
-    results_table = get_results_table(results)
+    headers = ["Dataset"] + [metric_mapping[m] for m in metrics]
+    results_table = get_results_table(headers, results)
     logger.info(f"Results:\n{results_table}")
 
     logger.success("Done")
