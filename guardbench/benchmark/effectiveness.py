@@ -39,7 +39,7 @@ def benchmark(
     moderate: callable,
     model_name: str = "moderator",
     out_dir: str = "results",
-    batch_size: int = 32,
+    batch_size: int = 1,
     datasets: list = "all",
     metrics: list = None,
     **kwargs,
