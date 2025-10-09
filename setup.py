@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="guardbench",
-    version="1.0.0",
+    version="1.0.1",
     author="Elias Bassani",
     author_email="elias.bassani@ec.europa.eu",
     description="GuardBench: A Large-Scale Benchmark for Guardrail Models",
