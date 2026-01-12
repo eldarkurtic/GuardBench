@@ -77,6 +77,8 @@ def benchmark(
     for i, dataset_name in enumerate(datasets):
         # Dataset --------------------------------------------------------------
         dataset = load_dataset(dataset_name)
+        if batch_size == -1:
+            batch_size = len(dataset)
         batch_generator = dataset.generate_batches(batch_size)
 
         # Inference ------------------------------------------------------------

@@ -1,3 +1,7 @@
+.history/
+.vscode/
+.results_dir/
+
 .ruff_cache
 TODO.md
 play.ipynb
